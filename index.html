@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SuDiTe — Coming Soon</title>
+  <title>SuDiTè — Coming Soon</title>
   <meta name="description" content="Sandali capresi fatti a mano in Sicilia. Prossimamente online." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,32 +46,32 @@
       background: #0A0503;
     }
 
-    /* Coming Soon: grande, corsivo elegante */
+    /* Coming Soon: grande corsivo elegante */
     .coming-soon {
       font-size: clamp(36px, 4vw, 64px);
       font-weight: 300;
       font-style: italic;
       letter-spacing: 0.04em;
       color: #FFFDF8;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       line-height: 1;
     }
 
-    /* Logo bianco su nero */
+    /* Logo ufficiale: dorato su sfondo blu, usato direttamente */
     .logo {
-      width: clamp(200px, 75%, 340px);
-      margin-bottom: 12px;
-      filter: invert(1) brightness(1.8);
+      width: clamp(220px, 80%, 380px);
+      margin-bottom: 20px;
+      border-radius: 4px;
     }
 
-    /* Prossimamente in piccolo sotto il logo */
+    /* Prossimamente */
     .prossimamente {
       font-size: clamp(11px, 1vw, 13px);
       font-weight: 400;
       letter-spacing: 0.30em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.45);
-      margin-bottom: 28px;
+      color: rgba(255,253,248,0.42);
+      margin-bottom: 20px;
     }
 
     .tagline {
@@ -145,14 +145,14 @@
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
-        grid-template-rows: 52vh auto;
+        grid-template-rows: 50vh auto;
       }
-      .hero-img { height: 52vh; }
+      .hero-img { height: 50vh; }
       .hero-img-overlay {
-        background: linear-gradient(to bottom, rgba(10,5,3,0) 45%, #0A0503 100%);
+        background: linear-gradient(to bottom, rgba(10,5,3,0) 40%, #0A0503 100%);
       }
       .hero-content { padding: 28px 24px 48px; }
-      .logo { width: clamp(160px, 60vw, 260px); }
+      .logo { width: clamp(180px, 72vw, 300px); }
       .coming-soon { font-size: clamp(32px, 10vw, 52px); }
     }
 
@@ -233,8 +233,8 @@
     <div class="hero-content">
       <p class="coming-soon">Coming Soon</p>
       <img class="logo"
-        src="https://links.wixel.com/link/E8GPNj0Z_m/raw"
-        alt="SuDiTe — Handmade in Sicily by Francesca Pagano" />
+        src="https://static.wixstatic.com/media/3b6bb2_f1693225f30b415da3866b5c455607aa~mv2.jpg"
+        alt="SuDiTè — Handmade in Sicily by Francesca Pagano" />
       <p class="prossimamente">Prossimamente</p>
       <p class="tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
       <p class="form-label">Avvisami quando apriamo</p>
