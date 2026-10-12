@@ -12,6 +12,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; scroll-behavior: smooth; font-family: 'Cormorant Garamond', Georgia, serif; }
 
+    /* Desktop: due colonne */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -36,41 +37,40 @@
       background: linear-gradient(to right, rgba(10,5,3,0) 55%, #0A0503 100%);
     }
 
+    /* Colonna destra: justify-content: flex-start con padding-top ~20%
+       cosi' Coming Soon si allinea all'altezza degli occhi di Francesca */
     .hero-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 60px 48px;
+      justify-content: flex-start;
+      padding: 18vh 48px 48px;
       text-align: center;
       background: #0A0503;
     }
 
-    /* Coming Soon: grande corsivo elegante */
     .coming-soon {
       font-size: clamp(36px, 4vw, 64px);
       font-weight: 300;
       font-style: italic;
       letter-spacing: 0.04em;
       color: #FFFDF8;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       line-height: 1;
     }
 
-    /* Logo ufficiale: dorato su sfondo blu, usato direttamente */
     .logo {
       width: clamp(220px, 80%, 380px);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       border-radius: 4px;
     }
 
-    /* Prossimamente */
     .prossimamente {
       font-size: clamp(11px, 1vw, 13px);
       font-weight: 400;
       letter-spacing: 0.30em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.42);
+      color: rgba(255,253,248,0.40);
       margin-bottom: 20px;
     }
 
@@ -78,19 +78,19 @@
       font-size: clamp(14px, 1.3vw, 18px);
       font-weight: 400; line-height: 1.75;
       font-style: italic;
-      color: rgba(255,253,248,0.75);
-      max-width: 360px; margin: 0 auto 28px;
+      color: rgba(255,253,248,0.72);
+      max-width: 360px; margin: 0 auto 26px;
     }
     .form-label {
       font-size: 10px; letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.48); margin-bottom: 10px;
+      color: rgba(255,253,248,0.46); margin-bottom: 10px;
     }
     .form-row {
       display: flex;
       border: 1px solid rgba(255,253,248,0.28);
       border-radius: 2px; overflow: hidden;
-      width: min(360px, 100%); margin: 0 auto 16px;
+      width: min(360px, 100%); margin: 0 auto 14px;
     }
     .form-row input {
       flex: 1; padding: 12px 14px;
@@ -100,7 +100,7 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 15px;
     }
-    .form-row input::placeholder { color: rgba(255,253,248,0.30); }
+    .form-row input::placeholder { color: rgba(255,253,248,0.28); }
     .form-row button {
       padding: 12px 20px;
       background: #A0522D; border: none; cursor: pointer;
@@ -113,11 +113,11 @@
     .form-row button:hover { background: #8B4513; }
     .contact {
       font-size: 12px; letter-spacing: 0.08em;
-      color: rgba(255,253,248,0.38); margin-bottom: 22px;
+      color: rgba(255,253,248,0.36); margin-bottom: 20px;
     }
     .contact a {
-      color: rgba(255,253,248,0.55); text-decoration: none;
-      border-bottom: 1px solid rgba(255,253,248,0.16);
+      color: rgba(255,253,248,0.52); text-decoration: none;
+      border-bottom: 1px solid rgba(255,253,248,0.14);
     }
     .btn-row {
       display: flex; gap: 12px;
@@ -126,7 +126,7 @@
     .btn-gallery, .btn-music {
       display: inline-block;
       padding: 12px 24px;
-      border: 1px solid rgba(255,253,248,0.38);
+      border: 1px solid rgba(255,253,248,0.36);
       border-radius: 2px;
       color: #FFFDF8;
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -151,7 +151,10 @@
       .hero-img-overlay {
         background: linear-gradient(to bottom, rgba(10,5,3,0) 40%, #0A0503 100%);
       }
-      .hero-content { padding: 28px 24px 48px; }
+      .hero-content {
+        padding: 32px 24px 48px;
+        justify-content: flex-start;
+      }
       .logo { width: clamp(180px, 72vw, 300px); }
       .coming-soon { font-size: clamp(32px, 10vw, 52px); }
     }
