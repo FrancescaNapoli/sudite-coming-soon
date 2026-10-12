@@ -10,18 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; scroll-behavior: smooth; }
+    html, body { height: 100%; scroll-behavior: smooth; font-family: 'Cormorant Garamond', Georgia, serif; }
 
-    /* SFONDO */
+    /* SFONDO: Francesca a tutto schermo */
     .bg {
       position: fixed; inset: 0; z-index: 0;
-      background-image: url('https://links.wixel.com/link/-dRHqD7Zv6/raw');
+      background-image: url('https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center top;
     }
     .overlay {
       position: fixed; inset: 0; z-index: 1;
-      background: rgba(30, 16, 6, 0.60);
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 5, 2, 0.45) 0%,
+        rgba(10, 5, 2, 0.30) 40%,
+        rgba(10, 5, 2, 0.70) 100%
+      );
     }
 
     /* HERO */
@@ -29,91 +34,89 @@
       position: relative; z-index: 2;
       min-height: 100vh;
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      align-items: center; justify-content: flex-end;
       text-align: center;
-      padding: 48px 24px;
+      padding: 0 24px 56px;
       color: #FFFDF8;
-      font-family: 'Cormorant Garamond', Georgia, serif;
     }
 
     .logo {
-      width: min(280px, 70vw);
-      margin-bottom: 32px;
+      width: min(240px, 62vw);
+      margin-bottom: 20px;
       filter: invert(1) brightness(2);
     }
 
     .coming {
-      font-size: clamp(22px, 4.5vw, 36px);
+      font-size: clamp(20px, 4vw, 32px);
       font-weight: 300;
       font-style: italic;
       letter-spacing: 0.08em;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .tagline {
-      font-size: clamp(14px, 2.4vw, 18px);
+      font-size: clamp(13px, 2.2vw, 17px);
       font-weight: 400;
       line-height: 1.75;
-      color: rgba(255,253,248,0.85);
-      max-width: 460px;
-      margin: 0 auto 36px;
+      color: rgba(255,253,248,0.82);
+      max-width: 420px;
+      margin: 0 auto 28px;
     }
 
     .form-label {
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.58);
-      margin-bottom: 12px;
+      color: rgba(255,253,248,0.55);
+      margin-bottom: 10px;
     }
     .form-row {
       display: flex;
-      border: 1px solid rgba(255,253,248,0.36);
+      border: 1px solid rgba(255,253,248,0.34);
       border-radius: 2px;
       overflow: hidden;
-      width: min(380px, 88vw);
-      margin: 0 auto 20px;
+      width: min(360px, 88vw);
+      margin: 0 auto 16px;
     }
     .form-row input {
-      flex: 1; padding: 13px 16px;
+      flex: 1; padding: 12px 14px;
       background: rgba(255,253,248,0.08);
       border: none; outline: none;
       color: #FFFDF8;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 16px;
+      font-size: 15px;
     }
-    .form-row input::placeholder { color: rgba(255,253,248,0.36); }
+    .form-row input::placeholder { color: rgba(255,253,248,0.34); }
     .form-row button {
-      padding: 13px 22px;
+      padding: 12px 20px;
       background: #A0522D; border: none; cursor: pointer;
       color: #FFFDF8;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 14px; font-weight: 500;
+      font-size: 13px; font-weight: 500;
       letter-spacing: 0.14em; text-transform: uppercase;
       transition: background 0.2s;
     }
     .form-row button:hover { background: #8B4513; }
 
     .contact {
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.08em;
-      color: rgba(255,253,248,0.48);
-      margin-bottom: 32px;
+      color: rgba(255,253,248,0.45);
+      margin-bottom: 24px;
     }
     .contact a {
-      color: rgba(255,253,248,0.65);
+      color: rgba(255,253,248,0.62);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255,253,248,0.22);
+      border-bottom: 1px solid rgba(255,253,248,0.20);
     }
 
-    /* BOTTONE GALLERIA */
     .btn-gallery {
       display: inline-block;
-      padding: 13px 32px;
-      border: 1px solid rgba(255,253,248,0.50);
+      padding: 12px 30px;
+      border: 1px solid rgba(255,253,248,0.48);
       border-radius: 2px;
       color: #FFFDF8;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -128,58 +131,68 @@
     /* GALLERIA */
     .gallery-section {
       position: relative; z-index: 2;
-      background: #1A0D05;
-      padding: 64px 24px 80px;
+      background: #0F0804;
+      padding: 64px 20px 80px;
     }
     .gallery-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(28px, 5vw, 48px);
       font-weight: 300;
       font-style: italic;
       color: #FFFDF8;
       text-align: center;
       letter-spacing: 0.06em;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .gallery-sub {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.45);
+      color: rgba(255,253,248,0.40);
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
-    .gallery-grid {
+
+    /* COLLAGE ASIMMETRICO */
+    .collage {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
-      max-width: 1100px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-    .gallery-grid img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
+    .collage img {
+      width: 100%; height: 100%;
       object-fit: cover;
       border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
       cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s;
     }
-    .gallery-grid img:hover {
-      transform: scale(1.03);
-      opacity: 0.92;
-    }
-    /* Primo elemento più grande */
-    .gallery-grid img:first-child {
-      grid-column: span 2;
-      aspect-ratio: 16 / 9;
+    .collage img:hover { transform: scale(1.03); opacity: 0.90; }
+
+    /* Layout collage: prima grande a sinistra */
+    .collage .c1 { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 4/3; }
+    .collage .c2 { grid-column: 3; grid-row: 1; aspect-ratio: 3/4; }
+    .collage .c3 { grid-column: 1; grid-row: 2; aspect-ratio: 3/4; }
+    .collage .c4 { grid-column: 2 / 4; grid-row: 2; aspect-ratio: 4/3; }
+
+    /* Mobile: due colonne */
+    @media (max-width: 600px) {
+      .collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .collage .c1 { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16/9; }
+      .collage .c2 { grid-column: 1; grid-row: 2; aspect-ratio: 1; }
+      .collage .c3 { grid-column: 2; grid-row: 2; aspect-ratio: 1; }
+      .collage .c4 { grid-column: 1 / 3; grid-row: 3; aspect-ratio: 16/9; }
     }
 
     /* LIGHTBOX */
     .lightbox {
       display: none;
       position: fixed; inset: 0; z-index: 100;
-      background: rgba(10, 5, 2, 0.93);
+      background: rgba(8, 4, 2, 0.95);
       align-items: center;
       justify-content: center;
       padding: 24px;
@@ -208,7 +221,7 @@
   <div class="bg"></div>
   <div class="overlay"></div>
 
-  <!-- HERO -->
+  <!-- HERO: Francesca sfondo, contenuto in basso -->
   <section class="hero">
     <img class="logo"
       src="https://links.wixel.com/link/E8GPNj0Z_m/raw"
@@ -228,13 +241,23 @@
   <section class="gallery-section" id="galleria">
     <h2 class="gallery-title">I sandali</h2>
     <p class="gallery-sub">Artigianato caprèse &middot; Fatto a mano in Sicilia</p>
-    <div class="gallery-grid">
-      <img src="https://static.wixstatic.com/media/3b6bb2_e40ce8d870c04937823174265685f893~mv2.jpg" alt="Sandali rossi con coralli" onclick="openLightbox(this.src)" />
-      <img src="https://static.wixstatic.com/media/3b6bb2_18048dde5a3e426691e0c79394c0b7af~mv2.jpg" alt="Sandali bianchi oro fiorato" onclick="openLightbox(this.src)" />
-      <img src="https://static.wixstatic.com/media/3b6bb2_4f3f24e9b2864e3fa3a98f4cc1d0a5b1~mv2.jpg" alt="Sandali bianchi oro fiorato 2" onclick="openLightbox(this.src)" />
-      <img src="https://static.wixstatic.com/media/3b6bb2_1f3c9e1a2a9a4b5c8d7e6f0a1b2c3d4e~mv2.jpg" alt="Sandalo gioiello cristalli" onclick="openLightbox(this.src)" />
-      <img src="https://static.wixstatic.com/media/3b6bb2_916ac53dbcd04edd90fcabe3bd4b9e74~mv2.jpg" alt="Francesca Pagano" onclick="openLightbox(this.src)" />
-      <img src="https://static.wixstatic.com/media/3b6bb2_de256f90a40c44c3b686139e939b2d0f~mv2.jpg" alt="La soletta" onclick="openLightbox(this.src)" />
+    <div class="collage">
+      <img class="c1"
+        src="https://links.wixel.com/link/bjBK8C2z-o/raw"
+        alt="Sandali rossi con coralli"
+        onclick="openLightbox(this.src)" />
+      <img class="c2"
+        src="https://links.wixel.com/link/KcVjt2j0ju/raw"
+        alt="Sandali rossi dettaglio"
+        onclick="openLightbox(this.src)" />
+      <img class="c3"
+        src="https://links.wixel.com/link/FAHMfL0pNX/raw"
+        alt="Sandali bianchi oro fiorati"
+        onclick="openLightbox(this.src)" />
+      <img class="c4"
+        src="https://links.wixel.com/link/0CBUWoAKsr/raw"
+        alt="Sandali cristalli menta"
+        onclick="openLightbox(this.src)" />
     </div>
   </section>
 
@@ -252,7 +275,7 @@
     function closeLightbox() {
       document.getElementById('lightbox').classList.remove('open');
     }
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
