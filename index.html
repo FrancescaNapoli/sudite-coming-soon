@@ -38,7 +38,6 @@
       color: #FFFDF8;
     }
 
-    /* Logo senza sfondo: usa versione cream trasparente, nessun filtro */
     .logo {
       width: min(240px, 62vw);
       margin-bottom: 20px;
@@ -126,6 +125,35 @@
       border-color: rgba(255,253,248,0.80);
     }
 
+    /* CONTROLLO AUDIO */
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,253,248,0.15);
+      border: 1px solid rgba(255,253,248,0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .audio-control:hover { background: rgba(255,253,248,0.25); }
+
+    /* YouTube iframe nascosto */
+    #yt-player {
+      position: absolute;
+      width: 1px; height: 1px;
+      top: -9999px; left: -9999px;
+      pointer-events: none;
+    }
+
     .gallery-section {
       position: relative; z-index: 2;
       background: #0F0804;
@@ -210,8 +238,13 @@
   <div class="bg"></div>
   <div class="overlay"></div>
 
+  <!-- YouTube player nascosto -->
+  <div id="yt-player"></div>
+
+  <!-- Controllo audio (angolo in basso a destra) -->
+  <button class="audio-control" id="audio-btn" title="Musica" onclick="toggleAudio()">🔇</button>
+
   <section class="hero">
-    <!-- Logo cream trasparente, nessun filtro CSS -->
     <img class="logo"
       src="https://links.wixel.com/link/jRQhXvimhk/raw"
       alt="SuDiTe — Handmade in Sicily by Francesca Pagano" />
@@ -242,7 +275,58 @@
     <img id="lightbox-img" src="" alt="" />
   </div>
 
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
+    var player;
+    var isMuted = true;
+    var isReady = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-player', {
+        videoId: 'RdVYUKCwhJE',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: 'RdVYUKCwhJE',
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          modestbranding: 1,
+          mute: 1
+        },
+        events: {
+          onReady: function(e) {
+            isReady = true;
+            e.target.mute();
+            e.target.playVideo();
+          },
+          onStateChange: function(e) {
+            // Loop manuale se necessario
+            if (e.data === YT.PlayerState.ENDED) {
+              player.seekTo(0);
+              player.playVideo();
+            }
+          }
+        }
+      });
+    }
+
+    function toggleAudio() {
+      if (!isReady) return;
+      var btn = document.getElementById('audio-btn');
+      if (isMuted) {
+        player.unMute();
+        player.setVolume(60);
+        btn.textContent = '\uD83D\uDD0A';
+        isMuted = false;
+      } else {
+        player.mute();
+        btn.textContent = '\uD83D\uDD07';
+        isMuted = true;
+      }
+    }
+
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('open');
