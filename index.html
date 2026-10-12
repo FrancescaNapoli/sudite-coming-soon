@@ -12,22 +12,27 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
 
-    /* SFONDO: logo SuDiTe a tutto schermo */
+    /* SFONDO: workshop siciliano */
     .bg {
       position: fixed; inset: 0; z-index: 0;
-      background: #2C1A0E;
-    }
-    .bg-logo {
-      position: fixed; inset: 0; z-index: 1;
-      background-image: url('https://links.wixel.com/link/b7AFSYSBw-/raw');
-      background-size: contain;
-      background-repeat: no-repeat;
+      background-image: url('https://links.wixel.com/link/-dRHqD7Zv6/raw');
+      background-size: cover;
       background-position: center;
-      opacity: 0.12;
     }
+    /* Overlay scuro per leggibilità */
     .overlay {
-      position: fixed; inset: 0; z-index: 2;
-      background: rgba(44, 26, 14, 0.15);
+      position: fixed; inset: 0; z-index: 1;
+      background: rgba(30, 16, 6, 0.58);
+    }
+    /* Logo SuDiTe in filigrana al centro */
+    .bg-logo {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: min(520px, 80vw);
+      opacity: 0.18;
+      pointer-events: none;
     }
 
     /* CONTENUTO */
@@ -37,67 +42,50 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center;
-      padding: 40px 24px;
+      padding: 48px 24px;
       color: #FFFDF8;
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
 
-    /* SANDALI */
-    .sandali {
-      width: min(380px, 84vw);
-      border-radius: 4px;
-      margin-bottom: 32px;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.55);
+    /* LOGO in cima, visibile */
+    .logo-top {
+      width: min(220px, 58vw);
+      margin-bottom: 36px;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
     }
 
-    /* BRAND */
-    .brand {
-      font-size: clamp(68px, 14vw, 130px);
-      font-weight: 300;
-      letter-spacing: 0.22em;
-      line-height: 1;
-      margin-bottom: 8px;
-      color: #FFFDF8;
-    }
-    .sub {
-      font-size: clamp(11px, 1.8vw, 14px);
-      font-weight: 400;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(255,253,248,0.65);
-      margin-bottom: 28px;
-    }
+    /* TESTI */
     .coming {
-      font-size: clamp(20px, 4vw, 32px);
+      font-size: clamp(22px, 4.5vw, 36px);
       font-weight: 300;
       font-style: italic;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       margin-bottom: 14px;
     }
     .tagline {
-      font-size: clamp(14px, 2.2vw, 17px);
+      font-size: clamp(14px, 2.4vw, 18px);
       font-weight: 400;
       line-height: 1.75;
       color: rgba(255,253,248,0.85);
       max-width: 460px;
-      margin: 0 auto 40px;
+      margin: 0 auto 44px;
     }
 
     /* FORM */
     .form-label {
       font-size: 11px;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,253,248,0.60);
+      color: rgba(255,253,248,0.58);
       margin-bottom: 12px;
     }
     .form-row {
       display: flex;
-      border: 1px solid rgba(255,253,248,0.38);
+      border: 1px solid rgba(255,253,248,0.36);
       border-radius: 2px;
       overflow: hidden;
       width: min(380px, 88vw);
-      margin: 0 auto 24px;
+      margin: 0 auto 22px;
     }
     .form-row input {
       flex: 1; padding: 13px 16px;
@@ -107,7 +95,7 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 16px;
     }
-    .form-row input::placeholder { color: rgba(255,253,248,0.38); }
+    .form-row input::placeholder { color: rgba(255,253,248,0.36); }
     .form-row button {
       padding: 13px 22px;
       background: #A0522D; border: none; cursor: pointer;
@@ -115,58 +103,42 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 14px; font-weight: 500;
       letter-spacing: 0.14em; text-transform: uppercase;
+      transition: background 0.2s;
     }
     .form-row button:hover { background: #8B4513; }
 
     .contact {
       font-size: 13px;
       letter-spacing: 0.08em;
-      color: rgba(255,253,248,0.50);
-      margin-bottom: 40px;
+      color: rgba(255,253,248,0.48);
     }
-    .contact a { color: rgba(255,253,248,0.68); text-decoration: none; border-bottom: 1px solid rgba(255,253,248,0.25); }
-
-    /* FRANCESCA */
-    .francesca {
-      display: flex; flex-direction: column; align-items: center; gap: 10px;
-    }
-    .francesca img {
-      width: min(160px, 40vw);
-      border-radius: 4px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,253,248,0.25);
-    }
-    .francesca-name {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,253,248,0.55);
+    .contact a {
+      color: rgba(255,253,248,0.65);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,253,248,0.22);
     }
   </style>
 </head>
 <body>
   <div class="bg"></div>
-  <div class="bg-logo"></div>
   <div class="overlay"></div>
+  <img class="bg-logo" src="https://links.wixel.com/link/jRQhXvimhk/raw" alt="" />
+
   <div class="page">
-    <img class="sandali"
-      src="https://static.wixstatic.com/media/3b6bb2_e40ce8d870c04937823174265685f893~mv2.jpg"
-      alt="Sandali capresi SuDiTe" />
-    <h1 class="brand">SuDiTe</h1>
-    <p class="sub">Sandali Capresi Artigianali &middot; Sicilia</p>
+    <!-- Logo visibile in cima -->
+    <img class="logo-top"
+      src="https://links.wixel.com/link/jRQhXvimhk/raw"
+      alt="SuDiTe — Handmade in Sicily by Francesca Pagano" />
+
     <p class="coming">Prossimamente</p>
     <p class="tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
+
     <p class="form-label">Avvisami quando apriamo</p>
     <div class="form-row">
       <input type="email" placeholder="La tua email" />
       <button>Iscriviti</button>
     </div>
     <p class="contact">Scrivici: <a href="mailto:info@sudite.art">info@sudite.art</a></p>
-    <div class="francesca">
-      <img src="https://static.wixstatic.com/media/3b6bb2_916ac53dbcd04edd90fcabe3bd4b9e74~mv2.jpg"
-        alt="Francesca Pagano" />
-      <span class="francesca-name">Francesca Pagano</span>
-    </div>
   </div>
 </body>
 </html>
