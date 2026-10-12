@@ -12,7 +12,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; scroll-behavior: smooth; font-family: 'Cormorant Garamond', Georgia, serif; }
 
-    /* Desktop: due colonne */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -22,14 +21,12 @@
       color: #FFFDF8;
     }
 
-    /* Colonna sinistra: Francesca */
     .hero-img {
       position: relative;
       overflow: hidden;
     }
     .hero-img img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -39,7 +36,6 @@
       background: linear-gradient(to right, rgba(10,5,3,0) 55%, #0A0503 100%);
     }
 
-    /* Colonna destra: contenuto */
     .hero-content {
       display: flex;
       flex-direction: column;
@@ -50,21 +46,32 @@
       background: #0A0503;
     }
 
-    /* "Coming Soon" sopra il logo */
-    .coming-soon-label {
-      font-size: clamp(11px, 1vw, 13px);
-      font-weight: 400;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: rgba(255,253,248,0.50);
-      margin-bottom: 18px;
+    /* Coming Soon: grande, corsivo elegante */
+    .coming-soon {
+      font-size: clamp(36px, 4vw, 64px);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      color: #FFFDF8;
+      margin-bottom: 20px;
+      line-height: 1;
     }
 
-    /* Logo: versione bianca su sfondo scuro, filtro invert */
+    /* Logo bianco su nero */
     .logo {
       width: clamp(200px, 75%, 340px);
-      margin-bottom: 28px;
+      margin-bottom: 12px;
       filter: invert(1) brightness(1.8);
+    }
+
+    /* Prossimamente in piccolo sotto il logo */
+    .prossimamente {
+      font-size: clamp(11px, 1vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: rgba(255,253,248,0.45);
+      margin-bottom: 28px;
     }
 
     .tagline {
@@ -72,7 +79,7 @@
       font-weight: 400; line-height: 1.75;
       font-style: italic;
       color: rgba(255,253,248,0.75);
-      max-width: 360px; margin: 0 auto 32px;
+      max-width: 360px; margin: 0 auto 28px;
     }
     .form-label {
       font-size: 10px; letter-spacing: 0.28em;
@@ -135,7 +142,6 @@
     }
     .btn-music.playing { border-color: #A0522D; color: #f0c898; }
 
-    /* Mobile: una colonna */
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
@@ -147,6 +153,7 @@
       }
       .hero-content { padding: 28px 24px 48px; }
       .logo { width: clamp(160px, 60vw, 260px); }
+      .coming-soon { font-size: clamp(32px, 10vw, 52px); }
     }
 
     #yt-frame {
@@ -154,7 +161,6 @@
       top: -9999px; left: -9999px; pointer-events: none;
     }
 
-    /* GALLERIA */
     .gallery-section {
       background: #060302;
       padding: 72px 24px 88px;
@@ -225,10 +231,11 @@
     </div>
 
     <div class="hero-content">
-      <p class="coming-soon-label">Coming Soon</p>
+      <p class="coming-soon">Coming Soon</p>
       <img class="logo"
         src="https://links.wixel.com/link/E8GPNj0Z_m/raw"
         alt="SuDiTe — Handmade in Sicily by Francesca Pagano" />
+      <p class="prossimamente">Prossimamente</p>
       <p class="tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
       <p class="form-label">Avvisami quando apriamo</p>
       <div class="form-row">
