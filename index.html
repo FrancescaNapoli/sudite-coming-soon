@@ -12,32 +12,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
 
-    /* SFONDO: workshop siciliano */
     .bg {
       position: fixed; inset: 0; z-index: 0;
       background-image: url('https://links.wixel.com/link/-dRHqD7Zv6/raw');
       background-size: cover;
       background-position: center;
     }
-    /* Overlay scuro per leggibilità */
     .overlay {
       position: fixed; inset: 0; z-index: 1;
-      background: rgba(30, 16, 6, 0.58);
-    }
-    /* Logo SuDiTe in filigrana al centro */
-    .bg-logo {
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      width: min(520px, 80vw);
-      opacity: 0.18;
-      pointer-events: none;
+      background: rgba(30, 16, 6, 0.60);
     }
 
-    /* CONTENUTO */
     .page {
-      position: relative; z-index: 3;
+      position: relative; z-index: 2;
       min-height: 100vh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
@@ -47,14 +34,13 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
 
-    /* LOGO in cima, visibile */
-    .logo-top {
-      width: min(220px, 58vw);
-      margin-bottom: 36px;
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
+    /* LOGO */
+    .logo {
+      width: min(280px, 70vw);
+      margin-bottom: 32px;
+      filter: invert(1) brightness(2);
     }
 
-    /* TESTI */
     .coming {
       font-size: clamp(22px, 4.5vw, 36px);
       font-weight: 300;
@@ -71,7 +57,6 @@
       margin: 0 auto 44px;
     }
 
-    /* FORM */
     .form-label {
       font-size: 11px;
       letter-spacing: 0.28em;
@@ -122,17 +107,12 @@
 <body>
   <div class="bg"></div>
   <div class="overlay"></div>
-  <img class="bg-logo" src="https://links.wixel.com/link/jRQhXvimhk/raw" alt="" />
-
   <div class="page">
-    <!-- Logo visibile in cima -->
-    <img class="logo-top"
-      src="https://links.wixel.com/link/jRQhXvimhk/raw"
+    <img class="logo"
+      src="https://links.wixel.com/link/E8GPNj0Z_m/raw"
       alt="SuDiTe — Handmade in Sicily by Francesca Pagano" />
-
     <p class="coming">Prossimamente</p>
     <p class="tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
-
     <p class="form-label">Avvisami quando apriamo</p>
     <div class="form-row">
       <input type="email" placeholder="La tua email" />
