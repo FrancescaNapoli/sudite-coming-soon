@@ -106,12 +106,8 @@
       background: rgba(255,253,248,0.12);
       border-color: rgba(255,253,248,0.80);
     }
-    .btn-music.playing {
-      border-color: #A0522D;
-      color: #f0c898;
-    }
+    .btn-music.playing { border-color: #A0522D; color: #f0c898; }
 
-    /* YouTube nascosto */
     #yt-frame {
       position: absolute; width: 1px; height: 1px;
       top: -9999px; left: -9999px; pointer-events: none;
@@ -205,7 +201,7 @@
     <p class="gallery-sub">Artigianato caprèse &middot; Fatto a mano in Sicilia</p>
     <div class="collage">
       <img class="c1" src="https://links.wixel.com/link/bjBK8C2z-o/raw" alt="Sandali rossi con coralli" onclick="openLightbox(this.src)" />
-      <img class="c2" src="https://static.wixstatic.com/media/3b6bb2_6a6c447013f4462299d240686fac786f~mv2.jpg" alt="Sandali rafia multicolore" onclick="openLightbox(this.src)" />
+      <img class="c2" src="https://links.wixel.com/link/b_J5t1b-bO/raw" alt="Sandali rafia multicolore" onclick="openLightbox(this.src)" />
       <img class="c3" src="https://links.wixel.com/link/FAHMfL0pNX/raw" alt="Sandali bianchi oro fiorati" onclick="openLightbox(this.src)" />
       <img class="c4" src="https://links.wixel.com/link/0CBUWoAKsr/raw" alt="Sandali cristalli menta" onclick="openLightbox(this.src)" />
     </div>
@@ -242,16 +238,22 @@
 
     function toggleMusic() {
       var btn = document.getElementById('music-btn');
-      if (!isReady) return;
+      if (!isReady) {
+        btn.textContent = 'Carico...';
+        setTimeout(function() {
+          btn.innerHTML = '&#9654; Rock e Rais';
+        }, 2000);
+        return;
+      }
       if (!isPlaying) {
         player.setVolume(70);
         player.playVideo();
-        btn.textContent = '\u23F8 Rock e Rais';
+        btn.innerHTML = '&#9646;&#9646; Rock e Rais';
         btn.classList.add('playing');
         isPlaying = true;
       } else {
         player.pauseVideo();
-        btn.textContent = '\u25B6 Rock e Rais';
+        btn.innerHTML = '&#9654; Rock e Rais';
         btn.classList.remove('playing');
         isPlaying = false;
       }
