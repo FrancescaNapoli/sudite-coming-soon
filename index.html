@@ -31,60 +31,34 @@
     .hero__contact { font-size: 14px; letter-spacing: 0.10em; color: rgba(255,253,248,0.60); }
     .hero__contact a { color: rgba(255,253,248,0.75); text-decoration: none; border-bottom: 1px solid rgba(255,253,248,0.30); }
     .francesca { position: absolute; bottom: 28px; right: 36px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .francesca__img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(255,253,248,0.50); box-shadow: 0 4px 20px rgba(0,0,0,0.35); display: block; }
-    .francesca__name { font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase; color: rgba(255,253,248,0.60); }
-    .story { background: var(--beige); color: var(--brown); padding: 80px 24px; text-align: center; }
-    .story__inner { max-width: 600px; margin: 0 auto; }
-    .story__eyebrow { font-size: 12px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--cognac); margin-bottom: 28px; }
-    .story__heading { font-size: clamp(28px, 5vw, 44px); font-weight: 300; font-style: italic; line-height: 1.25; color: var(--brown); margin-bottom: 28px; }
-    .story__body { font-size: clamp(16px, 2.2vw, 19px); font-weight: 400; line-height: 1.80; color: rgba(44,26,14,0.82); }
-    .photo-strip { height: clamp(320px, 50vw, 520px); background-image: url('https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg'); background-size: cover; background-position: center 20%; }
-    .footer { background: var(--brown); color: rgba(255,253,248,0.55); text-align: center; padding: 32px 24px; font-size: 13px; letter-spacing: 0.12em; }
-    .footer a { color: rgba(255,253,248,0.70); text-decoration: none; }
-    @media (max-width: 600px) {
-      .hero { padding-bottom: 180px; }
-      .francesca { right: 20px; bottom: 24px; }
-      .francesca__img { width: 76px; height: 76px; }
-      .form__row { flex-direction: column; border: none; gap: 10px; }
-      .form__input { border: 1px solid rgba(255,253,248,0.45); border-radius: 2px; text-align: center; }
-      .form__btn { border-radius: 2px; padding: 14px; width: 100%; }
-    }
+    .francesca__img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(255,253,248,0.5); }
+    .francesca__name { font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase; color: rgba(255,253,248,0.65); }
+    @media (max-width: 600px) { .francesca { bottom: 16px; right: 16px; } .francesca__img { width: 72px; height: 72px; } }
   </style>
 </head>
 <body>
   <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
     <div class="hero__content">
-      <img class="hero__logo-img" src="https://static.wixstatic.com/media/3b6bb2_de256f90a40c44c3b686139e939b2d0f~mv2.jpg" alt="SuDiTe — logo soletta" loading="eager"/>
+      <img class="hero__logo-img" src="https://static.wixstatic.com/media/3b6bb2_de256f90a40c44c3b686139e939b2d0f~mv2.jpg" alt="Logo SuDiTe" />
       <h1 class="hero__brand">SuDiTe</h1>
-      <p class="hero__subtitle-brand">Sandali capresi artigianali</p>
+      <p class="hero__subtitle-brand">Sandali Capresi Artigianali &mdash; Sicilia</p>
       <p class="hero__coming">Prossimamente</p>
-      <p class="hero__tagline">Sandali capresi fatti a mano in Sicilia —<br>Su di te. Dal Sud. Cuciti addosso a te.</p>
-      <form class="form" onsubmit="return false;">
+      <p class="hero__tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
+      <div class="form">
         <p class="form__label">Avvisami quando apriamo</p>
         <div class="form__row">
-          <input class="form__input" type="email" placeholder="La tua email" aria-label="Indirizzo email"/>
-          <button class="form__btn" type="submit">Iscriviti</button>
+          <input class="form__input" type="email" placeholder="La tua email" />
+          <button class="form__btn">Iscriviti</button>
         </div>
-      </form>
-      <p class="hero__contact">Scrivi a <a href="mailto:info@sudite.art">info@sudite.art</a></p>
+      </div>
+      <p class="hero__contact">Scrivici: <a href="mailto:info@sudite.art">info@sudite.art</a></p>
     </div>
     <div class="francesca">
-      <img class="francesca__img" src="https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg" alt="Francesca, artigiana SuDiTe" loading="lazy"/>
-      <span class="francesca__name">Francesca</span>
+      <img class="francesca__img" src="https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg" alt="Francesca Pagano" />
+      <span class="francesca__name">Francesca Pagano</span>
     </div>
   </section>
-  <section class="story">
-    <div class="story__inner">
-      <p class="story__eyebrow">Chi siamo</p>
-      <h2 class="story__heading">Su di te. Dal Sud.<br>Cuciti addosso a te.</h2>
-      <p class="story__body">SuDiTe nasce in Sicilia, da un'artigiana che ha imparato il mestiere a Capri. Ogni sandalo è fatto a mano, uno alla volta, cucito su forma per chi lo indosserà. Non esiste un paio uguale all'altro.</p>
-    </div>
-  </section>
-  <div class="photo-strip" role="img" aria-label="Francesca al lavoro nella sua bottega artigianale"></div>
-  <footer class="footer">
-    <p>© 2026 SuDiTe — Sandali Capresi Artigianali &nbsp;·&nbsp; <a href="mailto:info@sudite.art">info@sudite.art</a></p>
-  </footer>
 </body>
 </html>
