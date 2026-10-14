@@ -20,94 +20,64 @@
       background: #0A0503;
       color: #FFFDF8;
     }
-
-    .hero-img {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-    .hero-img-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(10,5,3,0) 55%, #0A0503 100%);
-    }
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .hero-img-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,5,3,0) 55%, #0A0503 100%); }
 
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: flex; flex-direction: column; align-items: center;
       justify-content: flex-start;
       padding: 18vh 48px 48px;
-      text-align: center;
-      background: #0A0503;
+      text-align: center; background: #0A0503;
     }
 
     .coming-soon {
-      font-size: clamp(36px, 4vw, 64px);
-      font-weight: 300;
-      font-style: italic;
-      letter-spacing: 0.04em;
-      color: #FFFDF8;
-      margin-bottom: 28px;
-      line-height: 1;
+      font-size: clamp(36px, 4vw, 64px); font-weight: 300; font-style: italic;
+      letter-spacing: 0.04em; color: #FFFDF8; margin-bottom: 28px; line-height: 1;
     }
-
-    /* Logo dorato trasparente: nessun filtro, sfondo nero fa risaltare l'oro */
-    .logo {
-      width: clamp(220px, 80%, 380px);
-      margin-bottom: 16px;
-    }
-
+    .logo { width: clamp(220px, 80%, 380px); margin-bottom: 16px; }
     .prossimamente {
-      font-size: clamp(11px, 1vw, 13px);
-      font-weight: 400;
-      letter-spacing: 0.30em;
-      text-transform: uppercase;
-      color: rgba(255,253,248,0.40);
-      margin-bottom: 20px;
+      font-size: clamp(11px, 1vw, 13px); font-weight: 400; letter-spacing: 0.30em;
+      text-transform: uppercase; color: rgba(255,253,248,0.40); margin-bottom: 20px;
     }
-
     .tagline {
-      font-size: clamp(14px, 1.3vw, 18px);
-      font-weight: 400; line-height: 1.75;
-      font-style: italic;
-      color: rgba(255,253,248,0.72);
+      font-size: clamp(14px, 1.3vw, 18px); font-weight: 400; line-height: 1.75;
+      font-style: italic; color: rgba(255,253,248,0.72);
       max-width: 360px; margin: 0 auto 26px;
     }
     .form-label {
-      font-size: 10px; letter-spacing: 0.28em;
-      text-transform: uppercase;
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
       color: rgba(255,253,248,0.46); margin-bottom: 10px;
     }
     .form-row {
-      display: flex;
-      border: 1px solid rgba(255,253,248,0.28);
+      display: flex; border: 1px solid rgba(255,253,248,0.28);
       border-radius: 2px; overflow: hidden;
-      width: min(360px, 100%); margin: 0 auto 14px;
+      width: min(360px, 100%); margin: 0 auto 8px;
     }
     .form-row input {
       flex: 1; padding: 12px 14px;
       background: rgba(255,253,248,0.06);
-      border: none; outline: none;
-      color: #FFFDF8;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 15px;
+      border: none; outline: none; color: #FFFDF8;
+      font-family: 'Cormorant Garamond', Georgia, serif; font-size: 15px;
     }
     .form-row input::placeholder { color: rgba(255,253,248,0.28); }
     .form-row button {
-      padding: 12px 20px;
-      background: #A0522D; border: none; cursor: pointer;
-      color: #FFFDF8;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      transition: background 0.2s;
+      padding: 12px 20px; background: #A0522D; border: none; cursor: pointer;
+      color: #FFFDF8; font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; transition: background 0.2s;
     }
     .form-row button:hover { background: #8B4513; }
+    .form-row button:disabled { background: #5a5a5a; cursor: default; }
+
+    /* Feedback iscrizione */
+    .form-feedback {
+      font-size: 12px; letter-spacing: 0.08em; min-height: 18px;
+      margin-bottom: 10px; transition: opacity 0.3s;
+    }
+    .form-feedback.ok { color: #c8a96e; }
+    .form-feedback.err { color: #e07070; }
+
     .contact {
       font-size: 12px; letter-spacing: 0.08em;
       color: rgba(255,253,248,0.36); margin-bottom: 20px;
@@ -116,78 +86,34 @@
       color: rgba(255,253,248,0.52); text-decoration: none;
       border-bottom: 1px solid rgba(255,253,248,0.14);
     }
-    .btn-row {
-      display: flex; gap: 12px;
-      align-items: center; justify-content: center; flex-wrap: wrap;
-    }
+    .btn-row { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
     .btn-gallery, .btn-music {
-      display: inline-block;
-      padding: 12px 24px;
-      border: 1px solid rgba(255,253,248,0.36);
-      border-radius: 2px;
-      color: #FFFDF8;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 12px; font-weight: 400;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      text-decoration: none; cursor: pointer;
-      background: transparent;
-      transition: background 0.2s, border-color 0.2s;
+      display: inline-block; padding: 12px 24px;
+      border: 1px solid rgba(255,253,248,0.36); border-radius: 2px;
+      color: #FFFDF8; font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 12px; font-weight: 400; letter-spacing: 0.18em;
+      text-transform: uppercase; text-decoration: none; cursor: pointer;
+      background: transparent; transition: background 0.2s, border-color 0.2s;
     }
-    .btn-gallery:hover, .btn-music:hover {
-      background: rgba(255,253,248,0.10);
-      border-color: rgba(255,253,248,0.75);
-    }
+    .btn-gallery:hover, .btn-music:hover { background: rgba(255,253,248,0.10); border-color: rgba(255,253,248,0.75); }
     .btn-music.playing { border-color: #A0522D; color: #f0c898; }
 
     @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        grid-template-rows: 50vh auto;
-      }
+      .hero { grid-template-columns: 1fr; grid-template-rows: 50vh auto; }
       .hero-img { height: 50vh; }
-      .hero-img-overlay {
-        background: linear-gradient(to bottom, rgba(10,5,3,0) 40%, #0A0503 100%);
-      }
-      .hero-content {
-        padding: 32px 24px 48px;
-        justify-content: flex-start;
-      }
+      .hero-img-overlay { background: linear-gradient(to bottom, rgba(10,5,3,0) 40%, #0A0503 100%); }
+      .hero-content { padding: 32px 24px 48px; justify-content: flex-start; }
       .logo { width: clamp(180px, 72vw, 300px); }
       .coming-soon { font-size: clamp(32px, 10vw, 52px); }
     }
 
-    #yt-frame {
-      position: absolute; width: 1px; height: 1px;
-      top: -9999px; left: -9999px; pointer-events: none;
-    }
+    #yt-frame { position: absolute; width: 1px; height: 1px; top: -9999px; left: -9999px; pointer-events: none; }
 
-    .gallery-section {
-      background: #060302;
-      padding: 72px 24px 88px;
-      border-top: 1px solid rgba(255,253,248,0.07);
-    }
-    .gallery-title {
-      font-size: clamp(30px, 4vw, 54px);
-      font-weight: 300; font-style: italic;
-      color: #FFFDF8; text-align: center;
-      letter-spacing: 0.06em; margin-bottom: 8px;
-    }
-    .gallery-sub {
-      font-size: 11px; letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(255,253,248,0.35);
-      text-align: center; margin-bottom: 48px;
-    }
-    .collage {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px; max-width: 1100px; margin: 0 auto;
-    }
-    .collage img {
-      width: 100%; height: 100%; object-fit: cover;
-      border-radius: 2px; cursor: pointer;
-      transition: transform 0.3s, opacity 0.3s;
-    }
+    .gallery-section { background: #060302; padding: 72px 24px 88px; border-top: 1px solid rgba(255,253,248,0.07); }
+    .gallery-title { font-size: clamp(30px, 4vw, 54px); font-weight: 300; font-style: italic; color: #FFFDF8; text-align: center; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .gallery-sub { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,253,248,0.35); text-align: center; margin-bottom: 48px; }
+    .collage { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; max-width: 1100px; margin: 0 auto; }
+    .collage img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; cursor: pointer; transition: transform 0.3s, opacity 0.3s; }
     .collage img:hover { transform: scale(1.03); opacity: 0.88; }
     .collage .c1 { grid-column:1/3; grid-row:1; aspect-ratio:4/3; }
     .collage .c2 { grid-column:3; grid-row:1; aspect-ratio:3/4; }
@@ -200,23 +126,10 @@
       .collage .c3 { grid-column:2; grid-row:2; aspect-ratio:1; }
       .collage .c4 { grid-column:1/3; grid-row:3; aspect-ratio:16/9; }
     }
-    .lightbox {
-      display: none; position: fixed; inset: 0; z-index: 100;
-      background: rgba(6,3,2,0.96);
-      align-items: center; justify-content: center; padding: 24px;
-    }
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(6,3,2,0.96); align-items: center; justify-content: center; padding: 24px; }
     .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: 90vw; max-height: 88vh;
-      object-fit: contain; border-radius: 2px;
-      box-shadow: 0 8px 64px rgba(0,0,0,0.8);
-    }
-    .lightbox-close {
-      position: absolute; top: 20px; right: 24px;
-      color: rgba(255,253,248,0.65);
-      font-size: 32px; cursor: pointer;
-      font-family: sans-serif; line-height: 1;
-    }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 2px; box-shadow: 0 8px 64px rgba(0,0,0,0.8); }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: rgba(255,253,248,0.65); font-size: 32px; cursor: pointer; font-family: sans-serif; line-height: 1; }
     .lightbox-close:hover { color: #FFFDF8; }
   </style>
 </head>
@@ -225,23 +138,20 @@
 
   <section class="hero">
     <div class="hero-img">
-      <img src="https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg"
-        alt="Francesca Pagano" />
+      <img src="https://static.wixstatic.com/media/3b6bb2_5c1883be54aa4614b2e7f46480cc8830~mv2.jpg" alt="Francesca Pagano" />
       <div class="hero-img-overlay"></div>
     </div>
-
     <div class="hero-content">
       <p class="coming-soon">Coming Soon</p>
-      <img class="logo"
-        src="https://links.wixel.com/link/KDVbetMxmg/raw"
-        alt="SuDiTè — Handmade in Sicily by Francesca Pagano" />
+      <img class="logo" src="https://links.wixel.com/link/KDVbetMxmg/raw" alt="SuDiTè — Handmade in Sicily by Francesca Pagano" />
       <p class="prossimamente">Prossimamente</p>
       <p class="tagline">Su di te. Dal Sud. Cuciti addosso a te.</p>
       <p class="form-label">Avvisami quando apriamo</p>
       <div class="form-row">
-        <input type="email" placeholder="La tua email" />
-        <button type="button">Iscriviti</button>
+        <input type="email" id="email-input" placeholder="La tua email" />
+        <button type="button" id="subscribe-btn" onclick="handleSubscribe()">Iscriviti</button>
       </div>
+      <p class="form-feedback" id="form-feedback"></p>
       <p class="contact">Scrivici: <a href="mailto:info@sudite.art">info@sudite.art</a></p>
       <div class="btn-row">
         <a class="btn-gallery" href="#galleria">Scopri i sandali</a>
@@ -268,6 +178,61 @@
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
+    // --- Iscrizione lista d'attesa ---
+    async function handleSubscribe() {
+      const input = document.getElementById('email-input');
+      const btn = document.getElementById('subscribe-btn');
+      const feedback = document.getElementById('form-feedback');
+      const email = input.value.trim();
+
+      if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+        feedback.textContent = 'Inserisci un\'email valida.';
+        feedback.className = 'form-feedback err';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = '...';
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+
+      try {
+        const res = await fetch('https://www.wixapis.com/contacts/v4/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'wix-site-id': 'f597d2f4-bcdd-462a-9f9d-e6574c4a512c'
+          },
+          body: JSON.stringify({
+            info: {
+              emails: { items: [{ email: email, tag: 'UNTAGGED' }] },
+              labelKeys: { items: ['custom.lista-attesa'] }
+            }
+          })
+        });
+
+        if (res.ok || res.status === 409) {
+          feedback.textContent = 'Perfetto! Ti avvisiamo non appena apriamo.';
+          feedback.className = 'form-feedback ok';
+          input.value = '';
+          btn.textContent = '✓';
+        } else {
+          throw new Error();
+        }
+      } catch(e) {
+        feedback.textContent = 'Qualcosa non ha funzionato. Riprova o scrivici a info@sudite.art';
+        feedback.className = 'form-feedback err';
+        btn.disabled = false;
+        btn.textContent = 'Iscriviti';
+      }
+    }
+
+    // Invio con tasto Enter
+    document.getElementById('email-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleSubscribe();
+    });
+
+    // --- Musica ---
     var player, isPlaying=false, isReady=false;
     function onYouTubeIframeAPIReady(){
       player=new YT.Player('yt-frame',{
@@ -285,6 +250,8 @@
       if(!isPlaying){player.setVolume(70);player.playVideo();btn.innerHTML='&#9646;&#9646; Rock e Rais';btn.classList.add('playing');isPlaying=true;}
       else{player.pauseVideo();btn.innerHTML='&#9654; Rock e Rais';btn.classList.remove('playing');isPlaying=false;}
     }
+
+    // --- Galleria ---
     function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');}
     function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
