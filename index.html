@@ -70,7 +70,6 @@
     .form-row button:hover { background: #8B4513; }
     .form-row button:disabled { background: #5a5a5a; cursor: default; }
 
-    /* Feedback iscrizione */
     .form-feedback {
       font-size: 12px; letter-spacing: 0.08em; min-height: 18px;
       margin-bottom: 10px; transition: opacity 0.3s;
@@ -162,7 +161,7 @@
 
   <section class="gallery-section" id="galleria">
     <h2 class="gallery-title">I sandali</h2>
-    <p class="gallery-sub">Artigianato caprèse &middot; Fatto a mano in Sicilia</p>
+    <p class="gallery-sub">Artigianato caprése &middot; Fatto a mano in Sicilia</p>
     <div class="collage">
       <img class="c1" src="https://links.wixel.com/link/bjBK8C2z-o/raw" alt="Sandali rossi con coralli" onclick="openLightbox(this.src)" />
       <img class="c2" src="https://links.wixel.com/link/b_J5t1b-bO/raw" alt="Sandali rafia multicolore" onclick="openLightbox(this.src)" />
@@ -201,7 +200,8 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'wix-site-id': 'f597d2f4-bcdd-462a-9f9d-e6574c4a512c'
+            'wix-site-id': 'f597d2f4-bcdd-462a-9f9d-e6574c4a512c',
+            'Authorization': 'IST.eyJraWQiOiJQb3pIX2FDMiIsImFsZyI6IlJTMjU2In0.eyJkYXRhIjoie1wiaWRcIjpcImM1YmJiMzdiLTk4OWMtNDg2OS1hYjM2LTgwZGMxMDlmYjdmMFwiLFwiaWRlbnRpdHlcIjp7XCJ0eXBlXCI6XCJhcHBsaWNhdGlvblwiLFwiaWRcIjpcIjA2NGU5MThlLTIwYWQtNGI5NC1iNmQzLTJlYjc0ZWYwZWNjZlwifSxcInRlbmFudFwiOntcInR5cGVcIjpcImFjY291bnRcIixcImlkXCI6XCIzYjZiYjJhYy1jOTM1LTQ3MTEtYmY5Yi01YTYwZjU1MWJmOGVcIn19IiwiaWF0IjoxNzkyMjM1ODA4fQ.V5e_ELD7Nb1TA_T0fpnzzIFFAIG-VRcxYiG8ez3wRBVpBH8xB-fxit8EDS-_A8lnk_2Hg4-Xu9GJs8RbKDAo2QU2MFK16RZdKjyKG3kn_cOW6FiG9ZFQpRxwbuCPuk64Ofy48c7dz9ZJQh18LHhyuHgQPOex5a_AtkoswplgLdg-xXLqNlMaSbVpTqoePAw6TMFlDdijfrnnnSYc2xJMDUg3y7FyILFY3nYu9Yni_x7MeDSz8zNhe8pnLOi1wKo6R4GdFXbFvr1nIfH1e88lcWv_UWL5LuT2aVEzLo52MiY83o2w1sckI0pFzEU-80jWhY3ReHsUdfrkB7D4xo03gA'
           },
           body: JSON.stringify({
             info: {
@@ -215,7 +215,7 @@
           feedback.textContent = 'Perfetto! Ti avvisiamo non appena apriamo.';
           feedback.className = 'form-feedback ok';
           input.value = '';
-          btn.textContent = '✓';
+          btn.textContent = '\u2713';
         } else {
           throw new Error();
         }
